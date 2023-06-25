@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "./data.module.css";
+
 
 const DataListItem = (props) => {
 	const { item, selectTab, selectedTab } = props;
@@ -7,7 +9,7 @@ const DataListItem = (props) => {
 	const isActive = selectedTab ? selectedTab.id === id : false;
 
   const onClickData = (e) => {
-    debugger
+  
 		if (isActive) {
 			selectTab(null);
 			return;
@@ -16,7 +18,7 @@ const DataListItem = (props) => {
 	};
 
 	return (
-		<tr onClick={onClickData}>
+		<tr onClick={onClickData} className={`${styles.tr} ${isActive ? styles.activeTab:""}`} >
 			<td className="column1">{id}</td>
 			<td className="column2">{firstName}</td>
 			<td className="column3">{lastName}</td>
