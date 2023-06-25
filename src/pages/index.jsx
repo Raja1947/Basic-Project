@@ -12,6 +12,7 @@ const DataItem=()=>{
         <>
         <SearchBar selectTab={selectTab} search={search} setSearch={setSearch}/>
         <Data search={search} selectedTab={selectedTab} selectTab={selectTab}/>
+
         {selectedTab&& <DataDetails details={selectedTab}/>}
         </>
     )
